@@ -1,0 +1,9 @@
+if ~exist('s','var')
+    s = serial('/dev/ttyUSB0');
+    set(s,'BaudRate', 9600);
+end
+
+if s.status(1) == 'c'
+    fopen(s);
+end
+pause(2)
